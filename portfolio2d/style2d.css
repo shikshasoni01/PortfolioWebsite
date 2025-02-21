@@ -1,0 +1,722 @@
+/*  padding :(top, right, bottom, and left). */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  zoom: 0.96;
+}
+body {
+  color: aliceblue;
+  /* max-width: 1500px; */
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: rgba(225, 204, 214, 0.594);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.logo {
+  position: relative;
+  font-size: 25px;
+  color: rgb(223, 212, 212);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.navbar a {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.navbar a:hover {
+  color: rgb(208, 186, 186);
+}
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 120vh;
+  background-size: cover;
+  background-position: center;
+  display: inline-flex;
+  background: url(/assests/back2.png) no-repeat;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home-content {
+  max-width: 600px;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content h3 span {
+  color: rgb(208, 186, 186);
+}
+.home-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-img {
+  border-radius: 100%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px white, 0 0 25px rgb(201, 62, 62), 0 0 50px white,
+    0 0 100px white, 0 0 200px white;
+}
+.home-img img {
+  width: 400px;
+}
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 20px;
+  color: aliceblue;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+  margin: 30px 15px 30px 0;
+}
+.home-sci a:hover {
+  background: deeppink;
+  box-shadow: 0 0 20px darkgray;
+  color: white;
+}
+.btn-box {
+  display: inline-block;
+  padding: 18px 35px;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 40px;
+  font-size: 20px;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  box-shadow: 0 0 45px darkgray;
+}
+.btn-box:hover {
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px whitesmoke,
+    0 0 100px whitesmoke, 0 0 200px whitesmoke;
+}
+.about {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 130vh;
+  background-size: cover;
+  background-position: center;
+  display: inline-flex;
+  background: url(/assests/back2.png) no-repeat;
+  align-items: center;
+  padding: 0px 10% 0;
+}
+.about-img {
+  max-width: 600px;
+}
+.about-img img {
+  /* padding-top: 18%; */
+  height: auto;
+  width: 400px;
+  border-radius: 100%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px white, 0 0 25px rgb(201, 62, 62), 0 0 50px white,
+    0 0 100px white, 0 0 200px white;
+}
+.about-text {
+  padding-left: 120px;
+}
+.about-text h2 {
+  font-size: 60px;
+}
+.about-text h2 span {
+  color: wheat;
+}
+.about-text h4 {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(222, 215, 215);
+  line-height: 1.7;
+  margin: 15px 0 30px;
+}
+.about-text p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+#services {
+  position: relative;
+  width: 100%;
+  height: 160vh;
+  display: flex;
+  justify-content: center;
+  background: url(/assests/back2.png) no-repeat;
+  padding: 40px 10% 0;
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.sub-title {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+.sub-title span {
+  color: wheat;
+}
+.container {
+  padding: 50px;
+}
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 100px;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+.services-list div {
+  background-color: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px whitesmoke;
+}
+.services-list div:hover {
+  transform: translateY(-10px);
+}
+.services-list div > i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.services-list div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: rgb(246, 193, 221);
+}
+.services-list div p {
+  font-size: 18px;
+}
+.skills {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  background: url(/assests/back2.png) no-repeat;
+  /* padding: 40px 10% 0;/ */
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.skill-container {
+  display: inline-flex;
+}
+.container1 {
+  width: 600px;
+  height: 500px;
+  padding: 75px 50px;
+  /* margin-left: 120px; */
+}
+.heading1 {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 50px;
+}
+.bar {
+  font-size: 23px;
+}
+.technical-bars .bar {
+  margin-top: 40px 0;
+}
+.technical-bars .bar:first-child {
+  margin-top: 0;
+}
+.technical-bars .bar:last-child {
+  margin-bottom: 0;
+}
+.technical-bars .bar .info {
+  margin-bottom: 2px;
+}
+.technical-bars .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+.technical-bars .bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 8px;
+  background-color: rgb(243, 228, 228);
+  animation: rotate 1.2s ease forwards;
+  transform: rotateX(0);
+  transform-origin: left;
+}
+@keyframes rotate {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+.technical-bars .bar .progress-line span {
+  height: 100%;
+  background-color: rgb(214, 29, 152);
+  position: absolute;
+  border-radius: 10px;
+  animation: rotate 1s ease linear forwards;
+  transform: scaleY(0);
+  transform-origin: left;
+}
+.progress-line.html span {
+  width: 90%;
+}
+.progress-line.css span {
+  width: 75%;
+}
+.progress-line.javascript span {
+  width: 90%;
+}
+.progress-line.bootstrap span {
+  width: 70%;
+}
+.progress-line.react span {
+  width: 90%;
+}
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background-color: white;
+  color: rgb(29, 24, 24);
+  font-size: 12px;
+  border-radius: 3px;
+  top: -20px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+.progress-line.html span::after {
+  content: "90%";
+}
+.progress-line.css span::after {
+  content: "75%";
+}
+.progress-line.javascript span::after {
+  content: "90%";
+}
+.progress-line.bootstrap span::after {
+  content: "70%";
+}
+.progress-line.react span::after {
+  content: "90%";
+}
+.progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: rgb(17, 16, 16);
+  top: -10px;
+  right: 0;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.experiences {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(/assests/back2.png) no-repeat;
+  /* padding: 40px 10% 0;/ */
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.experience h2 {
+  font-size: 60px;
+  line-height: 1;
+  text-align: center;
+  padding-top: 10px;
+}
+.experience h2 span {
+  color: wheat;
+}
+.experience-content {
+  display: grid;
+  grid-gap: 100px;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+.experience-content .content {
+  background-color: transparent;
+  padding: 40px;
+  width: 70rem;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px whitesmoke;
+}
+.experience-content .content:hover {
+  transform: translateY(-10px);
+}
+.experience-content .content .year {
+  font-size: 1.8rem;
+}
+.experience-content .content h3 {
+  font-size: 2.1rem;
+  color: burlywood;
+}
+.experience-content .content span {
+  font-size: 1.1rem;
+}
+
+.projects {
+  position: relative;
+  width: 100%;
+  height: 140vh;
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
+  background: url(/assests/back2.png) no-repeat;
+  /* padding: 40px 10% 0;/ */
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.main-text h2 {
+  font-size: 60px;
+  line-height: 1;
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
+.main-text h2 span {
+  color: wheat;
+}
+.porfolio-content {
+  padding: 50px 0 0 130px; /*t, r, b, l */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+}
+.row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* .row video {
+  height: 35rem;
+  width: 38rem;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s;
+} */
+.row .img-box {
+  display: flex;
+  width: 30rem;
+  height: 29rem;
+  background-color: transparent;
+  border: var(--border);
+  border-radius: 0.5rem;
+  /* overflow: hidden; to set the image transform  inside the container only not go outside */
+}
+.row .img-box video {
+  height: 31rem;
+  width: 39rem;
+  /*to specify how an <img> or <video> should be resized to fit its container */
+  object-fit: inherit;
+}
+.layer {
+  width: 105vh;
+  height: 0;
+  background: linear-gradient(rgba(234, 231, 185, 0.1), rgb(195, 27, 108));
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+  transition: height 0.5s;
+}
+.layer h5 {
+  color: white;
+  background-color: pink;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.layer p {
+  color: rgb(247, 229, 40);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.row:hover .img-box {
+  transform: scale(1.1);
+}
+.row:hover .layer {
+  height: 100%;
+}
+.btn-box1 {
+  display: inline-block;
+  padding: 15px 48px;
+  margin-left: 110vh;
+  margin-top: 25px;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 40px;
+  font-size: 20px;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  box-shadow: 0 0 45px darkgray;
+}
+.btn-box1:hover {
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px whitesmoke,
+    0 0 100px whitesmoke, 0 0 200px whitesmoke;
+}
+.contact {
+  height: 105vh;
+  background-image: url(/assests/back2.png);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.contact-text h2 {
+  font-size: 90px;
+  line-height: 1;
+  text-align: center;
+}
+.contact-text h2 span {
+  color: deeppink;
+}
+.contact-text h4 {
+  margin: 15px 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-text p {
+  color: bisque;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 2rem;
+}
+.contact-list {
+  margin-bottom: 3rem;
+}
+.contact-list li {
+  margin-bottom: 10px;
+  display: block;
+}
+.contact-list i {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+.contact-list li a:hover {
+  transform: scale(1.01) translateY(-5px);
+  color: rgb(218, 165, 193);
+}
+#contact-icons i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgb(243, 241, 241);
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+#contact-icons i:hover {
+  background-color: deeppink;
+  color: white;
+  box-shadow: 0 0 20px whitesmoke;
+}
+.contact-form form {
+  position: relative;
+}
+.contact-form form input,
+form textarea {
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 18px;
+  background-color: rgb(238, 131, 190);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+.contact-form textarea {
+  resize: none;
+  height: 220px;
+}
+.contact-form form .send {
+  display: inline-block;
+  padding: 14px 60px;
+  background: deeppink;
+  border-radius: 40px;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+  box-shadow: 0 0 5px white, 0 0 25px rgb(236, 110, 110);
+}
+.contact-form form .send:hover {
+  box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px whitesmoke,
+    0 0 100px whitesmoke, 0 0 200px whitesmoke;
+}
+.top {
+  position: fixed;
+  width: 40px;
+  height: 10px;
+  bottom: 1.5rem;
+  right: 1.4rem;
+}
+.top i {
+  color: white;
+  background: deeppink;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
