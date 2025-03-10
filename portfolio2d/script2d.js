@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //domload cv button
 document.getElementById("download").addEventListener("click", function () {
   const link = document.createElement("a");
-  link.href = "/assests/resumemain.pdf"; // Replace with the actual CV file path
+  link.href = "/assests/Shiksha Sourabh Soni.pdf"; // Replace with the actual CV file path
   link.download = "resume.pdf"; // The name of the downloaded file
   document.body.appendChild(link);
   link.click();
